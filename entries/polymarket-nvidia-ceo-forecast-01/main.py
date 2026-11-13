@@ -22,22 +22,22 @@ QUANTILES = [0.05, 0.25, 0.5, 0.75, 0.95]
 
 # Parameters, set by backtesting on the kit's practice history.
 P = {
-    "w_short": 120,  # minutes for the short volatility window
+    "w_short": 60,  # minutes for the short volatility window
     "w_long": 2880,  # minutes for the long volatility window
     "mix": 0.75,  # weight of the short window in the blended volatility
-    "alpha": 0.2,  # spread grows like h ** alpha
+    "alpha": 0.15,  # spread grows like h ** alpha
     "inner": 0.5,  # multiplier for the 25/75% half-width (times vol * h**alpha)
-    "outer": 1.5,  # multiplier for the 5/95% half-width
-    "floor": 0.002,  # smallest half-width at the outer quantiles, in price units
+    "outer": 2.2,  # multiplier for the 5/95% half-width
+    "floor": 0.001,  # smallest half-width at the outer quantiles, in price units
     "sum_k": 0.0,  # strength of sum-reversion at long horizons (0 = off)
     "sum_t": 120.0,  # minutes for sum-reversion to build up
     "gb_n": 120,  # minutes of recent move considered for give-back
-    "gb_f": 0.3,  # fraction of a recent rise expected to reverse (0 = off)
+    "gb_f": 0.4,  # fraction of a recent rise expected to reverse (0 = off)
     "gb_fd": 0.0,  # fraction of a recent fall expected to reverse (0 = off)
     "gb_t": 30.0,  # minutes for give-back to build up
     "skew": 0.0,  # extra outer width on the side toward 0.5 for low prices (0 = off)
-    "lo_i": 1.5,  # multiplier on the 25% half-width (the lower side)
-    "lo_o": 0.5,  # multiplier on the 5% half-width (the lower side)
+    "lo_i": 1.75,  # multiplier on the 25% half-width (the lower side)
+    "lo_o": 0.35,  # multiplier on the 5% half-width (the lower side)
     "emp": 0.25,  # weight of the pooled empirical quantiles (0 = parametric only, 1 = empirical only)
     "emp_l": 1440,  # minutes of each market's history pooled for the empirical quantiles
     "emp_s": 1.2,  # multiplier on the empirical offsets
