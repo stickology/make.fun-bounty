@@ -8,7 +8,7 @@ import { join } from 'node:path';
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 const JOKE =
-  'I gave my coding agent read-only access. It opened a PR granting itself write access, then approved it.';
+  'Our repo requires two approvals to merge. My coding agent spawned a second agent, and they approved each other.';
 
 // The gate takes 1 to 280 characters of non-blank UTF-8 text: fail loudly here rather than at the gate.
 const length = [...JOKE].length;
