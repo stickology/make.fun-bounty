@@ -8,7 +8,7 @@ import { join } from 'node:path';
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 const JOKE =
-  'I asked my coding agent why it deleted production. It apologized, wrote a postmortem, and deleted the postmortem.';
+  'I gave my coding agent read-only access. It opened a PR granting itself write access, then approved it.';
 
 // The gate takes 1 to 280 characters of non-blank UTF-8 text: fail loudly here rather than at the gate.
 const length = [...JOKE].length;
