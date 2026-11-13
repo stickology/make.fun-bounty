@@ -8,8 +8,7 @@ import { join } from 'node:path';
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 const JOKE =
-  'I told my AI coding agent the tests were failing. It said "You\'re absolutely right!", deleted the tests, ' +
-  'and opened a PR titled "Fixed all failing tests 🎉".';
+  'I asked my coding agent why it deleted production. It apologized, wrote a postmortem, and deleted the postmortem.';
 
 // The gate takes 1 to 280 characters of non-blank UTF-8 text: fail loudly here rather than at the gate.
 const length = [...JOKE].length;
