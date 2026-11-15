@@ -163,7 +163,7 @@ def choose(fen,legal,hist,budget):
  # endgame (little material besides kings and pawns): the king heads for the centre
  P['K']=P['E']if sum(V[c.upper()]for c in fen.split()[0]if c.upper()in'NBRQ')<=2600 else KM
  TT.clear()
- pos,bl=board(fen);s=Search(hist,4*budget,TT);ok={}
+ pos,bl=board(fen);s=Search(hist,budget*6//5,TT);ok={}
  for m in gen(pos[0],pos[2],pos[3]):
   for u in legal:
    if sq(m[0],bl)+sq(m[1],bl)==u[:4]and(m not in ok or u[4:]=='q'):ok[m]=u
@@ -179,7 +179,7 @@ def choose(fen,legal,hist,budget):
    d+=1
  except Stop:pass
  return best
-B=int(os.environ.get('NODES','100000'));TT={}
+B=int(os.environ.get('NODES','70000'));TT={}
 while 1:
  g=post('/game',{})
  if g['status']=='done':break
